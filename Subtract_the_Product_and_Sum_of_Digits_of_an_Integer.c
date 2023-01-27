@@ -1,16 +1,17 @@
 #include<stdio.h>
 int main()
 {
-    int n,q,r,s=0,p=1,diff;
+    int n,rem, sum=0,pro=1,diff;
     scanf("%d",&n);
-    q=n;
-    while(q!=0)
+    while(n>0)
     {
-        r=q%10;
-        p=p*r;
-        s=s+r;
-        q=q/10;
+        rem=n%10;
+        sum=sum+rem;
+        pro=pro*rem;
+        n=n/10;
     }
-    diff=p-s;
-    printf("%d",diff);
+    if(pro>sum)
+    printf("%d",pro-sum);
+    else
+    printf("%d",sum-pro);
 }
